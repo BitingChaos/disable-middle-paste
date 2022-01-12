@@ -1,0 +1,34 @@
+{
+  "title": "Terminal App",
+  "maintainers": [
+    "https://xenomorph.net"
+  ],
+  "rules": [
+    {
+      "description": "Disable Middle Mouse Button Paste in Terminal - v0.01",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "pointing_button": "button3"
+          },
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "description": "Terminal App RegEx",
+              "bundle_identifiers": [
+                "^com\\.apple\\.Terminal$"
+              ]
+            }
+          ],
+          "to": [
+            {
+              "repeat": true,
+              "key_code": "vk_none"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
